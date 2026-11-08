@@ -59,27 +59,6 @@ __Základní kostra programu se nachází v tomto repozitáři. Vaším úkolem 
 
 >_**Poznámka:** Implementace a struktura kódu aplikace je libovolná a je zcela na vás, jak tento problém vyřešíte. Je však důležité, aby aplikace splňovala zadané požadavky._
 
----
-
-## 🏆 Způsob hodnocení
-
-Vaše implementace bude hodnocena na základě chování aplikace při testování různých scénářů. Automatizovaný testovací nástroj bude předávat vaší aplikaci různé parametry, včetně platných a neplatných, aby otestoval její chování za různých podmínek. V případě testování síťové komunikace mezi více klienty, testovací nástroj bude vytvářet virtuální klienty/servery za účelem ověření funkcionality.
-
-Výsledné hodnocení bude záviset na celkovém počtu úspěšných testovacích případů. Počet bodů získaných z úlohy bude tedy záviset na celkové úspěšnosti při testování. Váš výsledný počet bodů bude určen následujícím vzorcem.
-
-__VP__ = __MB__ * (__UT__ / __CPT__)
-
-### Popis symbolů:
-
-* __VP:__ Výsledný počet bodů.
-* __MB:__ Maximální počet bodů pro danou úlohu.
-* __UT:__ Počet úspěšných testovacích případů.
-* __CPT:__ Celkový počet testovacích případů.
-
-## ⚙️ Jak spustit automatizované hodnocení lokálně na svém počítači?
-
-Automatizované hodnocení můžete spustit lokálně za účelem ověření funkčnosti vaší aplikace. K tomu slouží předpřipravený skript, který je dostupný v repozitáři tohoto úkolu. Výsledný report testování se bude nacházet v souboru ```test_report.html```.
-
 ###  Pro uživatele systému Linux:
 Spusťte skript s názvem ```run_local_test.sh```.
 
