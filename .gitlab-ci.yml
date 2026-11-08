@@ -21,7 +21,7 @@ build_application:
 basic_functionality_test:
   stage: smoke_test
   script:
-    - timeout 20s java -jar app/build/libs/app-all.jar "https://google.cz" 0 > crawler_output.txt
+    - timeout 20s java -jar app/build/libs/app-all.jar "https://google.com" 0 > crawler_output.txt
     - if [ ! -s crawler_output.txt ]; then echo "Test selhal - žádný výstup"; exit 1; fi
     - echo "Crawler úspěšně odeslal request a vrátil data v časovém limitu."
   dependencies:
