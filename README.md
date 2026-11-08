@@ -17,15 +17,15 @@
 Naprogramujte web crawler pro prohledávání webu a identifikaci 20 nejčastěji se vyskytujících slov. Aplikaci bude možné ovládat přes příkazový řádek a umožní specifikovat parametry pro hloubku zanoření a úroveň ladění programu. Implementujte parsování HTML stránek, procházení odkazů na stránce a analýzu četnosti slov. 
 
 ### Požadavky:
-* __Parsování HTML stránek:__ K implementaci tohoto úkolu můžete využít buď HTML parser přímo v JDK v balíčku _javax.swing.text.html.parser_, nebo open source parser pro HTML 4.0, např. _JSoup_. JSoup knihovna je již v tomto repozitáři zahrnuta a připravena na případné použití. 
+* __Parsování HTML stránek:__ K implementaci tohoto úkolu využijte open source parser _JSoup_. Zvolte vhodnou verzi JSoup a přidejte do dependencies v app/build.gradle. 
 * __Procházení odkazů:__ Program musí procházet všechny odkazy na stránce a ukládat je do seznamu nalezených odkazů. Musí také udržovat množinu všech navštívených stránek, aby se stejné stránky neanalyzovaly vícekrát.
-* __Analýza četnosti slov:__ Aplikace bude umožnovat analýzu četnosti slov. Pro implementaci je doporučené využít datovou strukturu "vyhledávací tabulka" (HashMap nebo TreeMap).
-* __Ošetření kódování stránek:__ Získání kódování stránek z HTTP hlavičky nebo značky META.
+* __Analýza četnosti slov:__ Aplikace bude provádět analýzu četnosti slov (pouze uživatelem čitelný text na webové stránce).
+* __Ošetření kódování stránek:__ Získání kódování stránek z HTTP hlavičky nebo značky META. Aplikace musi zpravně zpracovávat ruzné kódování stránek.
 * __Multithreading:__ Načítání a analýza každé stránky v nezávislém vláknu pomocí Executoru pro využití více jádrových procesorů. Seznam "visitedURIs" implementujte pomocí ConcurrentHashMap.
 
-### Formát výstupu aplikace
+### Výstupu aplikace
 
-Po spuštění aplikace prohledá web a po dokončení analýzy vypíše slova s ​​jejich absolutní četností seřazená sestupně na standardní výstup _System.out_. __Aplikace musí vypisovat pouze tyto informace a nic jiného navíc a to za celou dobu jejího běhu.__
+Po spuštění aplikace prohledá web a po dokončení analýzy vypíše slova s ​​jejich absolutní četností seřazená sestupně na standardní výstup _System.out_. Výsledek analýzy (tabulka četnosti slov) se musí nacházet viditelně na konci výpisu v terminálu. __Aplikace musí vrátit nějaký výsledek, nesmí dojít k nečekanému pádu nebo nekonečnému prohledávání webu.__
 
 ```
 the;47861
@@ -53,7 +53,6 @@ may;8774
 ### Struktura pole vstupních parametrů
 1. __args[0]__ - URL stránky, na které program zahájí analýzu - např. http://yahoo.com _(String)_
 2. __args[1]__ - Tento parametr bude udávat maximální hloubku zanoření při analýze. Tento parametr bude nepovinný. Pokud při spuštění aplikace nebude zadán, bude nastaven na 2. (Hloubka 0 znamená, že bude analyzován obsah jen stránky, na které je analýza zahájena).   _(int)_
-3. __args[2]__ - Tento parametr bude udávat, v jaké hloubce zanoření budou vypisovány případné debug informace na System.err. Tento parametr bude nepovinný. Můžete využít pro vlastní účely debugování. Při hodnocení nebude brán v úvahu. _(int)_ 
 
 __Základní kostra programu se nachází v tomto repozitáři. Vaším úkolem ji bude předělat tak, aby splňovala výše uvedené požadavky.__
 
