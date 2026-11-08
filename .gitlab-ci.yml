@@ -1,4 +1,4 @@
-image: gradle:jdk17
+image: gradle:9.2.1-jdk17
 
 before_script:
   - GRADLE_USER_HOME="$(pwd)/.gradle"
@@ -11,8 +11,7 @@ stages:
 build_application:
   stage: build
   script:
-    - chmod +x ./gradlew
-    - ./gradlew build -x test
+    - gradle build -x test
   artifacts:
     paths:
       - app/build/libs/app-all.jar
